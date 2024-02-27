@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom CSS styles here */
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([22.311, 73.185], 16);
+
+        // Add OpenStreetMap tiles as base layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 44,
+        }).addTo(map);
+
+        // GeoJSON data
+        var geojsonData = {
+            "type": "FeatureCollection",
+            "features": [
+            {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Faculty of Science"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.18397863039826, 22.312153938917973],
+            [73.18397863039826, 22.310493001913372],
+            [73.18579202019441, 22.310493001913372],
+            [73.18579202019441, 22.312153938917973],
+            [73.18397863039826, 22.312153938917973]
+          ]
+        ]
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Computer Application Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18547625588607, 22.312012050516316]
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Statistics Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18547723491639, 22.311669763236566]
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Mathematics Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18548725507804, 22.31131286869747]
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Smt Hansa Mehta Library"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.1853068921701, 22.310756667598028]
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chemistry Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18472685120116, 22.310930214742058]
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Zoology Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18412032323047, 22.31106920811095]
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Physics Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18487709207383, 22.311336898652897]
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Biochemistry Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.1841091942768, 22.311460447960954]
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Environmental Studies Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18454466601145, 22.311761123861075]
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Geology Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18506784032098, 22.3116843258467]
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Biostatistics Department"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [73.18456667420654, 22.311133210906632]
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Path 1"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [73.1853729320342, 22.311876111328417],
+          [73.18502333574304, 22.31111241509697],
+          [73.18475493600909, 22.311216745429604],
+          [73.18480906704809, 22.31131690247564]
+        ]
+      },
+      "id": 13
+    }
+  ]
+}
+
+            ]
+        };
+
+        // Add GeoJSON data to the map
+        L.geoJSON(geojsonData).addTo(map);
+    </script>
+</body>
+</html>
